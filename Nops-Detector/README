@@ -1,0 +1,9 @@
+INSTRUCTIONS:
+1.Name of input file with instructions to be updated at 2 places in code.one before beginning of case without forwarding and other before beginning of case with forwarding.
+2.between name of registers,space should be given just after comma,after name of register.
+3.no blank line or blank space should be given unnecessarily.
+4.Segmentation fault may occur on using file for first time,check that it should not have blank line and should follow naming and instruction conventions.
+5.If got segmentation fault,then try to create line by pressing enter on last line and then backspace
+6.Name of code file is coa5.c,compile it woth gcc coa5.c -o coa5.and run it with ./coa5
+7.Output is printed on terminal itself.
+
