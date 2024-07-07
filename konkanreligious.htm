@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:10px;
+  background-size: 300px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="marathwada.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Vidarbha</a>  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Places To Visit In Konkan</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='konkanreligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='konkanhistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='konkannature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="kreligiousa.jpg" alt="Image 1"><br>
+<p>Ganpatipule-Ratnagiri</p>
+      <img src="kreligiousb.jpg" alt="Image 2"><br>
+<p>Vajreshwari Temple-Thane</p>
+      <img src="kreligiousc.jpg" alt="Image 3"><br>
+<p>Harihareshwar-Raigad</p>
+      <img src="kreligiousd.jpg" alt="Image 4"><br>
+<p>Kunkeshwar-Sindhudurg</p>
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Religious Tourism</h2>
+      <p>Ganpatipule is a small coastal town located in the Ratnagiri district of Maharashtra, India. It is known for its scenic beauty, pristine beaches, and the famous Ganpatipule Temple, which is dedicated to Lord Ganesha.<br>The Ganpatipule Temple is the main attraction of the town. It houses a self-manifested idol of Lord Ganesha, which is believed to be about 400 years old. The temple is situated on a hillside, overlooking the Arabian Sea. The idol of Lord Ganesha is made of copper and stands at a height of around 6 meters.The idol of Lord Ganesha at Ganpatipule Temple is considered to be a Swayambhu, meaning it is a naturally formed or self-manifested idol. It is believed to have emerged from the soil.<br>Address: Ganpatipule,
+Ratnagiri District,
+Maharashtra</p>
+      <p>Vajreshwari Temple is a renowned Hindu temple located in the town of Vajreshwari, which is situated in the Bhiwandi taluka of Thane district in Maharashtra, India. The temple is dedicated to Goddess Vajreshwari, who is considered an incarnation of Goddess Parvati.<br>The temple is nestled in the picturesque surroundings of the Sahyadri Mountains and is known for its spiritual significance and architectural beauty. It attracts a large number of devotees and visitors throughout the year.<br>Vajreshwari is also famous for its hot springs, known as "Akloli Kund," which are believed to have medicinal properties.Apart from the main deity, the temple complex also houses several other shrines dedicated to various deities, including Lord Shiva, Lord Ganesha, and Lord Hanuman.Many visitors come to the temple to take a dip in these hot springs, as it is believed to have healing effects on various ailments.<br>Address:
+Vajreshwari Road, Vajreshwari,
+Bhiwandi, Thane District,
+Maharashtra,</p>
+      <p>Harihareshwar is a coastal town located in the Raigad district of Maharashtra, India. It is a popular tourist destination known for its beautiful beaches, ancient temples, and serene natural surroundings. The main attraction of Harihareshwar is the Harihareshwar Temple, dedicated to Lord Shiva.<br>The temple complex consists of two main shrines, one housing the idols of Lord Hari (Vishnu) and Lord Hara (Shiva). The temple is situated on a hill overlooking the Arabian Sea and offers breathtaking views of the surrounding area.<br> Another significant temple in Harihareshwar is the Kalbhairav Temple. It is dedicated to Lord Kalbhairav, an incarnation of Lord Shiva. The temple is known for its ancient architecture and religious significance.<br> Ganesh Gully is a narrow and rocky passage near Harihareshwar Beach. It is named after the resemblance of the passage to the trunk of Lord Ganesha. Visitors can explore this unique geological formation and enjoy the natural beauty of the surroundings.<br>Address: Harihareshwar, Raigad District,Maharashtra</p>
+      <p>Kunkeshwar is a coastal village located in the Sindhudurg district of Maharashtra, India. It is famous for its ancient Kunkeshwar Temple dedicated to Lord Shiva and its picturesque beach. The main attraction of Kunkeshwar is the Kunkeshwar Temple, dedicated to Lord Shiva. The temple is believed to have been built in the 12th century and showcases beautiful architectural craftsmanship. The sanctum of the temple houses a Shiva Linga (a representation of Lord Shiva) and is considered highly sacred by devotees.<br>Adjacent to the temple, there is a lighthouse that adds to the charm of Kunkeshwar. Visitors can climb the lighthouse to enjoy panoramic views of the coastline and the surrounding areas. The lighthouse offers a unique perspective and is a great spot for photography enthusiasts.<br>Kunkeshwar is known for its unspoiled natural beauty. The village is surrounded by lush green hills and offers a serene atmosphere. Visitors can explore the nearby areas, take nature walks, and enjoy the tranquility of the surroundings.<br>Address: Kunkeshwar, Sindhudurg, Maharashtra</p>
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

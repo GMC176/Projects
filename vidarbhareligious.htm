@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:20px;
+  background-size: 310px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="marathwada.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Vidarbha</a>
+
+  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Religious Places To Visit In Vidarbha!!!</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='vidarbhareligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='vidarbhahistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='vidarbhanature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="vreligiousa.jpg" alt="Image 1"><br>
+      <p>Deekshabhoomi-Nagpur</p>
+
+      <img src="vreligiousb.jpg" alt="Image 2"><br>
+      <p>Ramtek-Nagpur</p>
+
+      <img src="vreligiousc.jpg" alt="Image 3"><br>
+      <p>Ambadevi-Amravati</p> 
+
+      <img src="vreligiousd.jpg" alt="Image 4"><br>
+      <p>Lonar-Buldhana</p>
+
+      
+
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Religious Tourism</h2>
+      <p> It holds immense importance for followers of Buddhism, particularly those who follow the teachings of Dr. B.R. Ambedkar, a social reformer, jurist, and architect of the Indian Constitution.<br> This stupa is one of the largest hollow stupas in the world, reaching a height of over 120 feet (37 meters). It is made of Dhaulpur sandstone and features intricate carvings and inscriptions related to Buddhism and Dr. Ambedkar's life.The complex surrounding Deekshabhoomi also includes various facilities such as meditation halls, libraries, and exhibition halls that provide insights into Buddhism, Dr. Ambedkar's life, and his contributions to social justice and equality.<br>Address: Deekshabhoomi,
+Ambazari Road,
+Nagpur,
+Maharashtra</p>
+       <p>Ramtek is a small town located in the Nagpur district of Maharashtra, India.Ramtek holds great religious and historical significance and is known for its ancient temples and scenic surroundings.<br>The town is famous for the Ramtek Temple, also known as Ram Temple or Shri Ram Mandir. It is situated atop a hill called Ramgiri, providing a picturesque view of the surrounding landscape. The temple is dedicated to Lord Rama, and it is believed to be the place where Lord Rama stayed during his exile.<br>Ramtek is home to a historic fort, known as Ramtek Fort or Ramgiri Fort. The fort has ancient ruins and offers a glimpse into its architectural grandeur from the past.<br>Ramtek is surrounded by scenic beauty and natural landscapes. The Ramtek town is situated near the foothills of the Satpura mountain range, offering opportunities for nature walks and treks. The nearby Khindsi Lake is a popular attraction for boating and picnicking.<br>Address: Ramtek, Nagpur District, Maharashtra</p>
+       <p>Ambadevi Temple is a prominent religious site located in Amravati, Maharashtra, India. It is dedicated to Goddess Amba, also known as Goddess Durga or Goddess Jagdamba.The temple showcases beautiful architecture with intricate carvings and sculptures. The main sanctum of the temple houses the idol of Goddess Amba, adorned with jewelry and traditional clothing.<br>Ambadevi Temple is considered a significant pilgrimage site, attracting devotees who come to seek the blessings of Goddess Amba.<br> Many visitors believe that offering prayers at the temple fulfills their wishes and brings prosperity and well-being.<br>Visiting Ambadevi Temple provides devotees and visitors with a spiritual experience and a glimpse into the rich cultural heritage of Amravati. The serene surroundings, religious rituals, and the devotion of the devotees make it a significant place of worship in the region.<br>Address: Satpura Hills,
+Rajkamal Square,
+Amravati,
+Maharashtra</p>
+      <p>Lonar, located in the Buldhana district of Maharashtra, India, is renowned for the Lonar Crater and the surrounding Lonar Lake. While Lonar is primarily known for its geological significance, it also holds religious importance for certain communities. Lonar is home to the ancient Lonarka Devi Temple, dedicated to Goddess Kamalaja Devi.<br>Lonar finds mention in various ancient texts and scriptures, including the Skanda Purana and the Padma Purana. According to mythology, Lonar is believed to be the site where Lord Vishnu's Sudarshana Chakra (divine discus) struck the Earth, creating the Lonar Crater. Lonar is considered a significant pilgrimage site for devotees who worship Goddess Kamalaja Devi. Devotees visit the Lonarka Devi Temple to seek blessings, perform rituals, and participate in religious ceremonies.<br> The Lonar Lake is considered sacred by certain communities, and ritual bathing in the lake is believed to have purifying effects.<br>Address: Lonarka Devi Temple,
+Lonar Crater,
+Lonar,
+Buldhana,
+Maharashtra,
+India.</p>
+      <!-- Add more articles here -->
+    </div>
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

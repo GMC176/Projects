@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:20px;
+  background-size: 310px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="marathwada.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Vidarbha</a>
+
+  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Religious Places To Visit In Paschim Maharashtra!!!</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='paschimmaharashtrareligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='paschimmaharashtrahistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='paschimmaharashtranature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="preligiousa.jpg" alt="Image 1"><br>
+      <p>Pandharpur-Solapur</p>
+
+      <img src="preligiousb.jpg" alt="Image 2"><br>
+      <p>Khandoba temple-Jejuri</p>
+
+      <img src="preligiousc.jpg" alt="Image 3"><br>
+      <p>Alandi-Pune</p> 
+
+      <img src="preligiousd.jpg" alt="Image 4"><br>
+      <p>Dehu-Pune</p>
+
+      
+
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Religious Tourism</h2>
+      <p>The Pandharpur Temple, also known as Vitthal Temple or Vithoba Temple, is a prominent pilgrimage site located in the town of Pandharpur in Solapur district, Maharashtra, India. It is one of the most revered and visited temples in Maharashtra.The exact origin of the temple is uncertain, but it is believed to have a history of over 800 years.<br>The main sanctum of the temple houses the idol of Lord Vitthal and Rukmini.The idol of Vitthal is depicted standing with a brick in one hand and a conch shell in the other. The idol has a distinct appearance with a bald head and arms folded at the chest. The Palkhi procession is a major highlight of the Ashadi Ekadashi festival.<br>Address: Inamdar Wada, Gopalpur,
+Pandharpur, Solapur,
+Maharashtra</p>
+      <p>Jejuri Vithoba Temple, also known as Khandoba Temple, is a prominent Hindu temple located in the town of Jejuri in Pune district, Maharashta.The main deity of the temple is Lord Vithoba, also known as Khandoba or Malhari Martand. Lord Vithoba is worshipped as a manifestation of Lord Krishna.<br> The temple features a simple architectural style. It has a distinct Hemadpanti design, characterized by stone carvings and sculptures. The sanctum houses the idol of Lord Vithoba, which is carved out of black stone and is adorned with ornaments and flowers during festive occasions.Jejuri Vithoba Temple is associated with various legends and beliefs.<br>It is believed that the deity Khandoba, associated with Lord Shiva, took the form of Vithoba to bless and protect his devotees. The temple is also known for its association with the poet-saints Dnyaneshwar and Tukaram. The temple is situated atop a hill, and reaching the sanctum requires climbing a flight of stone steps. The climb to the temple is considered an important part of the pilgrimage experience, and devotees enthusiastically undertake the ascent, often singing devotional songs.<br>Address: Jejuri Vithoba Temple,
+Jejuri,
+Pune District,
+Maharashtra </p>
+      <p>Alandi is a town located in the Pune district of Maharashtra, India. It holds great religious significance for devotees of the bhakti saint Sant Dnyaneshwar, also known as Sant Jnaneshwar.<br>Sant Dnyaneshwar Samadhi Mandir: This is the primary attraction in Alandi and is the samadhi (final resting place) of Sant Dnyaneshwar. The temple complex houses the shrine of Sant Dnyaneshwar, along with the samadhis of his parents, Sant Nivruttinath and Mata Rakhumabai. Siddhabet is a revered spot located on the banks of the Indrayani River in Alandi. <br>It is believed to be the place where Sant Dnyaneshwar began his discourse of the Bhagavad Gita, known as Dnyaneshwari<br> Bhakti Dham is a spiritual center located in Alandi, dedicated to promoting the teachings of Sant Dnyaneshwar. It offers a serene environment for devotees to engage in spiritual activities, attend discourses, and participate in devotional programs. Devotees take ritual baths in the river and perform religious ceremonies on the ghats.<br>Address: Alandi, Pune District, Maharashtra</p>
+      <p>Dehu is a small town located in the Pune district of Maharashtra, India. It is known for its religious significance and association with the Sant tradition.Sant Tukaram Maharaj Samadhi Mandir: This is the main attraction in Dehu and is the samadhi (final resting place) of Sant Tukaram Maharaj, one of the most revered bhakti saints in Maharashtra. The temple complex houses the shrine of Sant Tukaram, and it attracts devotees who come to pay homage to the saint and seek his blessings.<br> Located near the samadhi temple, the Sant Tukaram Gatha Mandir is dedicated to preserving and promoting the teachings of Sant Tukaram. Pundlik Temple is another important place of worship in Dehu. It is dedicated to Pundlik, a devotee of Lord Vitthal who is believed to have interacted with the deity in Pandharpur.<br>Address: Sant Tukaram Maharaj Samadhi Mandir,
+Dehu,
+Pune District,
+Maharashtra </p>
+      <!-- Add more articles here -->
+    </div>
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

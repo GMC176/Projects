@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:10px;
+  background-size: 270px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="flights.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Flights</a>
+    <a href="trains.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Trains</a>
+    <a href="hotels.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Hotels</a>
+    <a href="stats.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Stats</a>
+    <a href="suggestions.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Suggestions</a>
+    <a href="aboutus.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">About Us</a>
+  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Religious Places To Visit In Marathwada!!!</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='marathwadareligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='marathwadahistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='marathwadanature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="mreligiousa.jpg" alt="Image 1"><br>
+      <p>Mankeshwar Temple-Osmanabad</p>
+
+      <img src="mreligiousb.jpg" alt="Image 2"><br>
+      <p>Kailash Temple-Aurangabad</p>
+
+      <img src="mreligiousc.jpg" alt="Image 3"><br>
+      <p>Eknath Maharaj Samadhi-Aurangabad</p> 
+
+      <img src="mreligiousd.jpg" alt="Image 4"><br>
+      <p>Hazur Sahib-Nanded</p>
+
+      <img src="mreligiouse.jpg" alt="Image 5"><br>
+      <p>Aurangzeb Tomb-Aurangabad</p>
+
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Religious Tourism</h2>
+      <p>Mankeshwar is an ancient Shiva temple in Bhum taluka of Osmanabad district. – The temple is beautifully carved. – Various works of art in the architecture attract attention. – In the deep part of the temple there is a big body of Mahadev. – In front of the temple is the Nandimandap which has a large sized Nandi. – It is speculated that the temple was constructed during the Chalukya period.The Mankeshwar temple dates back to the twelfth century. On the Aurangabad Osmanabad road from Kunthalgiri, take the right hand road and a fine road passes through the hills.The temple has been constructed at a picturesque location on the crescent bend of Vishwakarma river.<br>
+      Address : Mankeshwar Mandir, Mankeshwar, T.Bhum. Dist.Osmanabad-413504
+Tambewadi or Vangi Budruk.</p>
+      <p>The Kailash or Kailashnath Temple dedicated to Lord Shiva at Ellora Caves on the Sahyadri Hills near Aurangabad in Maharashtra is the largest rock-cut Hindu temple in the world. Of the 100 caves here, 34 are open to the public and cave number 16 is the massive Kailasa Temple, which is part of a UNESCO World Heritage Site and one of the largest single stone excavations in the world. Carved vertically from top to bottom of a single basalt rock on the Charandri hills, the temple is a unique example of architecture and a wonder for history and architecture lovers. It is believed that the Kailasa temple bears a striking resemblance to the Virupaksha temple of Karnataka.<br>Interesting story related to the temple According to the story-telling of Krishna Yajnavalki, when a king was seriously ill, his queen prayed to Lord Shiva for her husband’s health. If the king recovers from the illness, the queen will build a temple dedicated to Lord Shiva and fast until the top of the temple is completed.A group of 34 cave temples near the small village of Verul or Ellora in Aurangabad district of Maharashtra state in India is world famous as Ellora Caves.<br>Address: Kailas Temple, Ellora Caves, Verul, Aurangabad, Maharashtra<br></p>
+     <p>There is a Samadhi temple of Saint Eknath Maharaj on the bank of Godavari in Paithan. – The temple is constructed from teak wood. – The temple area has been beautified. There is also a grand Datta Mandir. – The Nathshashthi Yatra festival, which has a tradition of four and a half hundred years, is very important. – This festival is held in the month of March every year. – There are ancient temples of various gods and goddesses in the city area. – Sant Eknath Maharaj’s old mansion in the village has been converted into a temple.<br>Sant Eknath, commonly known as Nath (Born : Paithan, 1533 A.D – 1599 A.D) was a saint of the Varkari sect of Maharashtra. He wa s born in Paithan in 1533 A.D. Saint Bhanudas was the great grandfather of Eknath.<br>Nath diligently served the Guru and Dattatreya gave him darshan in real life; It is said that Dattatreya used to stand at the gate of Nath as a gatekeeper. Nath also performed many pilgrimages.<br>He entertained and enlightened the public through his literature. He refers to himself as ‘Eka Janardhan’, Eka Janardani being his motto.<br>Address: Godavari river bank,Paithan,Aurangabad,Maharashtra.</p>
+     <p>Nanded is often mentioned on tourist itineraries as home to many Sufi shrines. Sachkhand Sri Hazur Abchalnagar Sahib is one of these temples that regularly flocks and frequents the faithful to seek blessings. It is the most important Gurdwara of the Sikhs where the ‘Takhat’ is located and where the tenth Guru of the Sikhs, Sri Guru Gobind Singh Ji breathed his last on 7 October 1708.<br>It is said that Guru Gobind Singh came to Nanded with Bahadur Shah towards the end of August 1708 and then after a few days’ rest went to Golconda, while Guru Gobind Singh decided to stay here.the Guru demanded that the Guru Granth Sahib be installed there and it was named ‘Takht Sahib’.Apart from Takhat Sahib, it also includes two other temples.<br>The inner room of the Gurdwara is called Angitha Sahib and is built on the spot where Guru Gobind Singh was cremated in 1708. The site is now one of five Takhat Sahibs of primary importance to Sikhs, the other four being Akal Takht in Amritsar, Takht Keshgarh Sahib in Anandpur, Takhat Patna Sahib in Bihar district and Takhat Damdama Sahib in Bathinda, Punjab.<br>Address:Govind Bagh Road, Harsh Nagar, Nanded, Maharashtra 431601 </p>
+     <p>The Tomb of Aurangzeb, the last influential Mughal emperor, is located in Khuldabad, Aurangabad district, Maharashtra, India. In notable contrast to other Mughal tombs, which are large monuments of Mughal architecture, including the Taj Mahal, at his own direction Aurangzeb is buried in an unmarked grave at the complex of the dargah or shrine of Sheikh Zainuddin.<br>Aurangzeb (4 November 1618 – 3 March 1707), the sixth Mughal emperor, ruled most of the Indian subcontinent for half a century until he died on 3 March 1707. According to his wish, he was buried near the dargah of Sheikh Zainuddin, a sufi who was also his "spiritual and religious teacher".<br>Address:  Khuldabad,Aurangabad,24 kilometres from Aurangabad.</p>
+      <!-- Add more articles here -->
+    </div>
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

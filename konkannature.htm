@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:10px;
+  background-size: 310px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  padding-left:20px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  width: 260px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="marathwada.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Vidarbha</a>  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Nature Places To Visit In konkan!!!</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='konkanreligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='konkanhistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='konkannature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="knaturea.jpg" alt="Image 1"><br>
+      <p>Tarkarli beach-Malvan </p>
+      <img src="knatureb.jpg" alt="Image 2"><br>
+      <p>Kashid beach-Raigad</p>
+      <img src="knaturec.jpg" alt="Image 3"><br>
+      <p>Karnala Bird Sanctuary-Raigad</p>
+      <img src="knatured.jpg" alt="Image 4"><br>
+      <p>Koyna WildLife Sanctuary-Ratnagiri</p>
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Nature Tourism</h2>
+      <p> Tarkarli Beach is known for its pristine white sand, crystal-clear turquoise waters, and picturesque surroundings.Tarkarli Beach is known for its natural beauty and tranquility. <br>Tarkarli Beach is known for its natural beauty and tranquility. The beach offers a peaceful and serene atmosphere with clean shores and relatively fewer crowds compared to some other popular beaches in the region. The clear waters of the Arabian Sea make it an ideal spot for swimming, snorkeling, and scuba diving.Tarkarli Beach is famous for its water sports activities. Visitors can indulge in thrilling experiences such as snorkeling, scuba diving, banana boat rides, jet skiing, and parasailing<br>Address: Tarkarli, Malvan,
+Sindhudurg District,
+Maharashtra</p>
+       <p>Kashid Beach is a beautiful coastal destination situated in the Raigad district of Maharashtra, India. It is known for its long stretch of white sand, clear turquoise waters, and picturesque surroundings. Kashid Beach is renowned for its natural beauty and tranquil atmosphere.<br>The beach is characterized by its pristine white sand and clean shores. The crystal-clear waters of the Arabian Sea make it an ideal spot for swimming, sunbathing, and water sports. Kashid Beach offers various water sports activities for adventure enthusiasts. <br>Visitors can enjoy thrilling experiences such as jet skiing, banana boat rides, parasailing, and kayaking.The beach is surrounded by lush green hills, coconut groves, and casuarina trees, adding to its scenic charm. The picturesque landscape offers a tranquil setting for leisurely walks, picnics, and enjoying the natural beauty of the surroundings. Kashid Beach is located in close proximity to several tourist attractions. One of the prominent attractions is the Korlai Fort, an ancient Portuguese fort built during the 16th century.<br>Address: Kashid Village, Murud Taluka,
+Raigad District,
+Maharashtra </p>
+       <p>Karnala Bird Sanctuary, located near Panvel in the Raigad district of Maharashtra, India, is a popular destination for bird enthusiasts and nature lovers.The sanctuary covers an area of around 4.8 square kilometers and is known for its rich biodiversity.<br> It is home to more than 150 species of resident and migratory birds, making it a haven for birdwatching enthusiasts. Some of the notable bird species found here include the Malabar Whistling Thrush, Ashy Minivet, Malabar Grey Hornbill, and the rare Rufous-tailed Lark.Apart from the diverse birdlife, Karnala Bird Sanctuary is also home to a variety of plant and animal species.<br>The forested area of the sanctuary consists of a mix of moist deciduous and semi-evergreen forests. Visitors can spot various mammals, reptiles, butterflies, and insects while exploring the sanctuary.<br>The sanctuary offers several trails and pathways for visitors to explore and observe the avian species.There is also a nature interpretation center where visitors can learn more about the flora, fauna, and bird species found in the sanctuary.<br>Address: Karnala, Panvel,
+Raigad District,
+Maharashtra</p>
+       <p> Koyna Wildlife Sanctuary is a protected area located in the Satara district of Maharashtra, India. It is situated in the Western Ghats region and is known for its rich biodiversity and scenic beauty.<br> The sanctuary is known for its diverse flora and fauna. It is covered with dense forests comprising various tree species, including teak, shisham, ain, bamboo, and many more.The sanctuary is home to a variety of wildlife, including mammals like Indian bison (gaur), sloth bear, sambar deer, leopard, and several species of reptiles, amphibians, and birds.<br> Koyna Wildlife Sanctuary offers trekking and nature trails for visitors to explore the natural beauty of the region.The trails pass through dense forests and offer breathtaking views of the surrounding hills, valleys, and water bodies. Trekking enthusiasts can enjoy the adventure and experience the wilderness of the sanctuary.<br>Address: Western Ghats, Ratnagiri and Satara districts, Maharashtra</p>
+
+
+
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

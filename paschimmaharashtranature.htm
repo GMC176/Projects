@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:20px;
+  background-size: 315px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="marathwada.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Vidarbha</a>
+
+  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Nature Places To Visit In Paschim Maharashtra!!!</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='paschimmaharashtrareligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='paschimmaharashtrahistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='paschimmaharashtranature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="pnaturea.jpg" alt="Image 1"><br>
+      <p>Mahabaleshwar-Satara </p>
+      <img src="pnatureb.jpg" alt="Image 2"><br>
+      <p>Lonavala-Pune</p>
+      <img src="pnaturec.jpg" alt="Image 3"><br>
+      <p>Panchagani-Satara</p>
+      <img src="pnatured.jpg" alt="Image 3"><br>
+      <p>Kaas plateu-Satara</p>
+      
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Nature Tourism</h2>
+      <p>Mahabaleshwar is a popular hill station and tourist destination located in the Satara district of Maharashtra, India. Nestled in the Western Ghats at an altitude of around 1,438 meters.It is renowned for its natural beauty, historic sites, strawberry farms, and pleasant weather, making it a favored getaway for tourists.<br> Mahabaleshwar is known for its numerous vantage points that offer breathtaking views of the Sahyadri mountain range and valleys. Some popular viewpoints include Arthur's Seat, Wilson Point (Sunrise Point), Kate's Point, Elephant's Head Point, and Lodwick Point.The Mahabaleshwar Temple is a prominent religious site dedicated to Lord Shiva. It is believed to be one of the ancient temples in the region.<br>Address: Mahabaleshwar,
+Satara District,
+Maharashtra</p>
+      <p>Lonavala is a popular hill station and tourist destination located in the Pune district of Maharashtra. Lonavala experiences a moderate climate throughout the year. The monsoon season (June to September) brings heavy rainfall, making the surrounding hills and valleys lush and green.<br> Lonavala is famous for its scenic beauty, encompassing lush green hills, misty valleys, and cascading waterfalls. The region is dotted with viewpoints that offer panoramic vistas, including Tiger Point, Lion's Point, and Rajmachi Point.Lonavala is home to several ancient caves and forts.<br> The Karla Caves and Bhaja Caves, dating back to the 2nd century BC, are important Buddhist rock-cut cave complexes.<br>: Lonavala is known for its beautiful lakes.<br> The Lonavala Lake and Tungarli Lake are popular spots for boating and picnics.<br>Address: Lonavala,
+Pune District,
+Maharashtra</p>
+       <p>Panchgani is renowned for its natural beauty and breathtaking vistas. The hill station is adorned with lush green hills, misty valleys, and cascading waterfalls. The Krishna River flows through the region, adding to the picturesque landscape.<br>Table Land is the largest volcanic plateau in Asia and a major attraction in Panchgani. It offers panoramic views of the surrounding hills and is a popular spot for picnics, horse riding, and leisurely walks. Table Land is also famous for its various Bollywood film shoots. Panchgani is famous for its strawberry farms. Visitors can explore these farms, pluck fresh strawberries, and indulge in strawberry-based products like jams, syrups, and desserts. The strawberry season is usually from November to March.<br> Parsi Point is a scenic viewpoint that offers breathtaking views of the Krishna Valley and the Dhom Dam. It is named after the Parsi community who used to visit the spot for picnics.<br>Address: Panchgani,
+Satara District,
+Maharashtra</p>
+       <p>Kaas Plateau, also known as Kaas Pathar or the Valley of Flowers, is a stunning natural marvel located in Satara district of Maharashtra.<br> Kaas Plateau is a biodiversity hotspot, known for its rich flora and fauna. It is home to numerous endemic and endangered plant species, including a variety of wildflowers, grasses, and shrubs. The plateau boasts a wide range of flowering plants, including species like Smithia hirsuta, Impatiens lawii, Utricularia purpurascens, and many more.<br> Kaas Plateau offers well-defined walking trails that allow visitors to explore its enchanting landscapes. The trails meander through the flowering meadows, offering breathtaking views of the surrounding hills and valleys. Kaas Plateau is a paradise for nature photographers, offering endless opportunities to capture the beauty of the blooming flowers, scenic landscapes, and unique plant species.<br>Address: Kaas Plateau,
+Near Bamnoli Village,
+Satara District,
+Maharashtra </p>
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hovering Tabs</title>
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 50px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        body {
+            background-image: url("bbb.jpg");
+            opacity: 1;
+            overflow-x: scroll;
+        }
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+    </style>
+    <script>
+        // Function to change the border color on mouseover
+        function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Sidebar content -->
+        <!-- ... -->
+    </div>
+
+    <div class="w3-top">
+        <!-- W3.CSS navigation bar -->
+        <!-- ... -->
+    </div>
+
+    <h1>Hovering Tabs</h1>
+
+    <div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maharashtra.jpg');>
+            <span> Element 1</span>
+        </div>
+  
+        <div id="element2" class="custom-element"
+            onmouseover="changeBorder('element2'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element2'); transitionImageSrc('map-image', 'maharashtra.jpg');">
+            <span> Element 2</span>
+        </div>
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maharashtra.jpg');">
+            <span> Element 3</span>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maharashtra.jpg');">
+            <span> Element 4</span>
+        </div>
+    
+        <div id="element5" class="custom-element"
+            onmouseover="changeBorder('element5'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element5'); transitionImageSrc('map-image', 'maharashtra.jpg');">
+            <span> Element 5</span>
+        </div>
+   
+        <div id="element6" class="custom-element"
+            onmouseover="changeBorder('element6'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element6'); transitionImageSrc('map-image', 'maharashtra.jpg');">
+            <span> Element 6</span>
+        
+    </div>
+
+    <div id="map-container">
+        <img id="map-image" class="fade-in" src="maharashtra.jpg" alt="Map"style="width: 600px; height: 500px;">
+    </div></div>
+ <div class="w3-container w3-white w3-padding-16">
+      <form action="data.php" mathod target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-calendar-o"></i> Check In</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-calendar-o"></i> Check Out</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckOut" required>
+          </div>
+        </div>
+        <div class="w3-row-padding" style="margin:8px -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-male"></i> Adults</label>
+            <input class="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="6">
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-child"></i> Kids</label>
+          <input class="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="6">
+          </div>
+        </div>
+        <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Search availability</button>
+      </form>
+    </div>
+<footer class="w3-container w3-dark-grey" style="padding:10px 10px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

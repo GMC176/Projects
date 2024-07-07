@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height:inherit;
+  background-image: url("sidebar.gif");
+  background-size: cover;
+}
+.w3-bar-item w3-button{
+background-image: url("img_snowtops.jpg");
+background-size:100% 100%;
+}
+.w3-teal{
+background-image: url("bb.jpg");
+background-size:100%;
+background-repeat:x-repeat;
+}
+/* Styles for tabs */
+        <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUctywjAM/KE6gh4Cl04/pePYGlfg11gyNH9fEyDl3YvGK+9KKwn2WZkUBaNAqCr76igybFCyNtsThpDSIdjqkaGg14JW5cRygzrD/AaPS3ra4l/hCd3Rz1xXGxywuPZTEHbLvlt0CxgqeQuDT1OBoegyAsvo8VXfR6Occl87jDYV0FVS0CJkZvaOLKZckPmqK1qSJpgAw0RqEfezAYrGV3sYlCE0tkaPYXJ0AbLXIxbl0WkzdoHi//L2d4mvRM+3d/I5L12PqYpyheyTvf1bomih6PhGPttuCTBeM5NR8t2s8kOnF+c5HLjlQ9b3Q76Q7ck6lGPD41sJ/ryW5NZGDcN0VdVioBrOLpvuM3ws+3W/Wq/65fvmF6NKLBM=&cssminify=yes' type='text/css' media='all' />
+        <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align:justify;
+        }
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+
+        /* Styles for tabs */
+        .custom-element,h3 {
+            position: relative;
+            border: 5px solid transparent;
+            padding: 10px 10px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.05s;
+            max-width: 100%;
+            color:black;
+        }
+
+        /* Hover style */
+        .custom-element:hover {
+            color: red;
+            transform: scale(1.1);
+            transform-origin: left center;
+        }
+
+        /* Background image */
+        
+
+        /* Container for each tab */
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px; 
+            position:relative;
+            margin-right: 100px;
+            background-image: url("marathwadaback2.jpg");
+            background-size:100% 100%;
+            width:100%;
+            padding-right:300px;
+        }
+
+        /* Positioning the map container */
+        
+        /* Image fade-in and fade-out animation */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.05s;
+        }
+.container {
+ display:flex;
+}
+.image-section {
+  background-image: url("marathwadaback.jpg");
+  padding:10px;
+  background-size: 270px 100%;
+  
+  background-repeat:no-repeat;
+  
+}
+.article-section {
+  padding-top:0px;
+  flex: 7;
+}
+img {
+  width: 80%;
+  height: 190px;
+  outline: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.display = "block";
+/*  document.getElementById("openNav").style.display = 'none'; */
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").style.display = "none";
+/*  document.getElementById("openNav").style.display = "inline-block"; */
+}
+function changeBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'red';
+        }
+
+        // Function to reset the border color on mouseout
+        function resetBorder(elementId) {
+            var element = document.getElementById(elementId);
+            element.style.borderColor = 'transparent';
+        }
+
+        // Function to transition the image src attribute
+        function transitionImageSrc(imageId, newSrc) {
+            var image = document.getElementById(imageId);
+            image.classList.remove('fade-in');
+            image.classList.add('fade-out');
+            setTimeout(function() {
+                image.src = newSrc;
+                image.classList.remove('fade-out');
+                image.classList.add('fade-in');
+            }, 100);
+        }
+</script>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="openclosesb.htm" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="aboutmh.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About MH</a>
+    <a href="marathwada.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Vidarbha</a>
+
+  </div>
+</div><br><br>
+<div id="main">
+  <div class="w3-teal">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <h1>Best Nature Places To Visit In Marathwada!!!</h1>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="marathwada.htm" class="w3-bar-item w3-button">Marathwada</a>
+    <a href="konkan.htm" class="w3-bar-item w3-button">Konkan</a>
+    <a href="paschimmaharashtra.htm" class="w3-bar-item w3-button">Paschim Maharashtra</a>
+    <a href="uttarmaharashtra.htm" class="w3-bar-item w3-button">Uttar Maharashtra</a>
+    <a href="vidarbha.htm" class="w3-bar-item w3-button">Vidarbha</a>
+  </div>
+<div class="tab-container">
+        <div id="element1" class="custom-element"
+            onmouseover="changeBorder('element1'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element1')"; transitionImageSrc('map-image', 'maha.jpg');
+            onclick="window.location.href='marathwadareligious.htm'">
+            <h3>Religious</h3>
+        </div>
+  
+        
+    
+        <div id="element3" class="custom-element"
+            onmouseover="changeBorder('element3'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element3'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='marathwadahistoric.htm'">
+            <h3>Historic</h3>
+        </div>
+    
+        <div id="element4" class="custom-element"
+            onmouseover="changeBorder('element4'); transitionImageSrc('map-image', 'marathwada.png');"
+            onmouseout="resetBorder('element4'); transitionImageSrc('map-image', 'maha.jpg');"
+            onclick="window.location.href='marathwadanature.htm'">
+            <h3>Nature</h3>
+        </div>
+    
+        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="image-section">
+      <img src="mnaturea.jpg" alt="Image 1"><br>
+      <p>Siddharth Garden & Zoo-Aurangabad </p>
+      <img src="mnatureb.jpg" alt="Image 2"><br>
+      <p>Sahasrakund Water Falls-Nanded</p>
+      <img src="mnaturec.jpg" alt="Image 3"><br>
+      <p>Gautala Ghat Sanctuary-Aurangabad</p>
+      <img src="mnatured.jpg" alt="Image 4"><br>
+      <p>Salim Ali Sarovar-Aurangabad</p>
+      <!-- Add more images here -->
+    </div>
+    <div class="article-section">
+      <h2>Nature Tourism</h2>
+      <p>One of Aurangabad’s tourist attractions that promises to make an ordinary day enjoyable, Siddharth Garden and Zoo is an ideal place to visit with the family. It is a landscaped garden with a variety of flowering plants and trees, an aquarium, and more than the usual gardens, a zoo – all in all, a favorite weekend spot for locals.<br>The garden provides plenty of space for relaxation with a peaceful atmosphere, the zoo has some exotic species on display, from tigers and elephants to crocodiles and snakes.Siddharth Garden is a landscaped garden spread over a large area and has a green outlook. The garden has 2 parts – one is a lawned garden and the other is a small zoo.<br>Address: Central Bus Stand Road, Mhada, Aurangabad </p>
+     <p>Sahasrakund waterfall is one of the waterfalls in Nanded district.The river flow is divided by a large rock, so the water falls into two separate streams. It is the largest waterfall in the recent course of the river. This waterfall on the Panganga river that divides Marathwada and Vidarbha is truly picturesque.<br> Falling from a height of approximately 30-40 feet, this waterfall takes on its true splendor during the months of August-September. This breathtaking waterfall shows its different form every time. From the Marathwada side of the Panganga, a single waterfall gushes out a deluge of milk.This waterfall can be seen from 15-20 feet. Although it is dangerous to get too close because of the algae on the rock, if you take care, you will not even know that you are getting wet while sitting on the rock.<br>If you take a two-day drive, you can see Renuka Mata Darshan, Datta Shikhar, Anasuya Mata Temple and the surrounding green hills and valleys at nearby Mahur. A garden has been created for tourists on the banks of Sahasrakud Falls.<br>Address: Murli, Kinwat, Nanded, Maharashtra</p>
+     <p>Gautala Sanctuary in Chalisgaon Taluka of Jalgaon District and Kannad Taluka of Aurangabad District is about 260 Sq. that I. is spread over the area.Gautala Sanctuary was established in 1986. This sanctuary is located in Kannad taluka of Aurangabad district is spread over about 260 sq. km.. The forest area of ​​17 villages in Kannad taluka is included in this sanctuary.<br>After entering through the entrance near Kannad, many types of trees and flowers are seen. After going further we see a stream flowing through the sandalwood forest called Chandan Nala. Colorful birds like peacocks and parrots can be seen on its banks. Similarly Satbhai, Sugran, Dayal, Bulbul, Kotwal and Chandol birds are seen. A dense forest starts after this stream. Next is a temple of Maruti. Gautala Lake is in front of this temple. The entire area of ​​this lake is grassy.<br>There are bamboo, palas, ranpimpal, ranashevaga, kadulimb, tamarind trees around the Gautala pond. Divers, waterfowl and other birds can be seen in the pond. There is an observation tower next to the pond. From this tower one can see the nature of Gautala area.<br>Address: Kannad Village,Aurangabad District</p>
+     <p>If you prefer quiet places with natural beauty over crowded markets and tourist spots, Salim Ali Lake is one of the best tourist spots in Aurangabad for you. Surrounded by lush vegetation, this large body of water is a delight for nature lovers due to its serene aura, where one can hear the uninterrupted music of nature.<br>A large variety of birds can be found in the bird sanctuary around the lake, making it a favorite spot for bird watching for a large number of bird lovers. Whether you want to spend your day admiring the natural splendor of the lake, capturing it on your camera or exploring it by boat, this place is a must-see.<br>Salim Ali Lake and surrounding area is a rare and rich biodiversity site in the city with around 16 species of trees, 11 species of shrubs, 8 climbers, 32 terrestrial herbaceous plants, 10 types of algae.There are 12 aquatic plants, 16 aquatic insects and insects. Crustaceans, nine types of fish, 15 types of reptiles, seven types of rodents and mammals and 102 types of insects<br>Address :Chhatrapati Nagar,Aurangabad
+  </div>
+</div>
+<footer class="w3-container w3-dark-grey" style="padding:5px 5px 5px 5px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Side Navigation Bar</title>
+    <style>
+        /* CSS for the side navigation bar */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            left: 0;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>Welcome to my website!</h1>
+        <p>This is the main content of the page.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Side Navigation Bar</title>
+    <style>
+        /* CSS for the side navigation bar */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar {
+            width: 100px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            left: 0;
+            transform: translateX(-250px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #sidebar.active {
+            transform: translateX(0);
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        #menu-toggle:checked ~ #sidebar {
+            transform: translateX(0);
+        }
+
+        #menu-toggle:checked ~ #sidebar ul li {
+            opacity: 1;
+        }
+
+        #menu-toggle:checked ~ #sidebar ul li:nth-child(1) {
+            transition-delay: 0.15s;
+        }
+
+        #menu-toggle:checked ~ #sidebar ul li:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+
+        #menu-toggle:checked ~ #sidebar ul li:nth-child(3) {
+            transition-delay: 0.45s;
+        }
+
+        #menu-toggle:checked ~ #sidebar ul li:nth-child(4) {
+            transition-delay: 0.6s;
+        }
+
+        .hamburger {
+            display: block;
+            width: 15px;
+            height: 25px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            cursor: pointer;
+            color:black;
+        }
+
+        .hamburger .line {
+            width: 50%;
+            height: 3px;
+            background-color: #fff;
+            position: absolute;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger .line:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger .line:nth-child(2) {
+            top: 11px;
+        }
+
+        .hamburger .line:nth-child(3) {
+            top: 22px;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </label>
+
+    <div id="sidebar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>Welcome to my website!</h1>
+        <p>This is the main content of the page.</p>
+    </div>
+</body>
+</html>
