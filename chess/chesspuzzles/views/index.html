@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Login</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 200px;
+    background-image: url("/css/openback.jpg"); /* Ensure this path is correct */
+    background-size: cover;
+    background-size: 1920px 1080px;
+    background-position-y: -60px;
+}
+
+.form-container {
+    border: 1px solid #ccc;
+    padding: 50px;
+    color:white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    
+}
+
+.label, input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Signup</h2>
+        <form id="signupForm" action="/signup" method="POST">
+            <label for="signupLoginId">Login ID:</label>
+            <input type="text" id="signupLoginId" name="loginId" required><br><br>
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" required><br><br>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm" action="/login" method="POST">
+            <label for="loginLoginId">Login ID:</label>
+            <input type="text" id="loginLoginId" name="loginId" required><br><br>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

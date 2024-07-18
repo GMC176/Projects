@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background-image: url("/css/welcome.jpg");
+            background-size: 1920px 960px;
+        }
+        .navbar {
+    display: flex;
+    background-color: #333;
+    padding: 14px 0; /* Add padding for spacing */
+}
+        /* Navigation tabs */
+.navbar .tab {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Change background color on hover */
+.navbar .tab:hover {
+    background-color: #575757;
+}
+
+/* Active tab styling */
+.navbar .tab.active {
+    background-color: #4CAF50;
+    color: white;
+}
+    </style>
+</head>
+<body onload="getCookies()">
+    	<div class="navbar">
+        <a href="default.asp" class="tab">Home</a>
+        <a href="puzzle.ejs" class="tab">Puzzles</a>
+        <a href="contact.asp" class="tab">Contact</a>
+        <a href="about.asp" class="tab">About</a>
+    	</div>
+    <div class="welcome-container">
+        <script>
+            async function getCookies() {
+                const response = await fetch('/session-user');
+                const data = await response.json();
+                document.getElementById("cookies").innerText = `Welcome ${data.user}`;
+            }
+        </script>
+        <h1 id="cookies">Welcome</h1>
+    </div>
+</body>
+</html>
+

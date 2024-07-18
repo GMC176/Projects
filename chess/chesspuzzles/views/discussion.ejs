@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Chess Puzzle</title>
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chess.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+    <script src="/chessBoard-1.0.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 10px;
+            font-family: Arial, sans-serif;
+            background-color: #9e9b9b;
+            color: #333;
+        }
+        #chess-board {
+            margin-top: 20px;
+            width: 730px;
+            height: 730px;
+            margin-right: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #comments-section {
+            flex: 1;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-height: 700px;
+            overflow-y: auto;
+        }
+        #comments-section h2 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        #comments {
+            margin-bottom: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .comment {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .comment p {
+            margin: 0;
+        }
+        .comment strong {
+            color: #007bff;
+        }
+        .comment em {
+            font-size: 0.85em;
+            color: #888;
+        }
+        #comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+        #comment-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+        }
+        #comment-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #comment-form button:hover {
+            background-color: #0056b3;
+        }
+        #upper{
+            display: flex;
+            flex-direction: row;
+            padding-left: 300px;
+        }
+        .upvoteForm{
+            margin-left: auto;
+        }
+        .upvoteForm span {
+            margin-left: 10px;
+        }
+        a {
+            margin: 20px 0;
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 50px;
+            color:white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            align-content: center;
+            text-align: center;
+            align-self: center;
+            
+        }
+        .navbar {
+            display: flex;
+            background-color: #333;
+            padding: 1px 0; /* Add padding for spacing */
+            width: 100%;
+            
+        }
+                /* Navigation tabs */
+        .navbar .tab {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .tab{
+                color: white;
+                padding: 14px 10px;
+                margin-top: 20px;
+                text-decoration: none;
+                background-color: #333;
+            
+        }
+        
+        /* Change background color on hover */
+        .navbar .tab:hover {
+            background-color: #575757;
+        }
+        
+        /* Active tab styling */
+        .navbar .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .rest{
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="default.asp" class="tab">Home</a>
+        <a href="puzzle.ejs" class="tab">Puzzles</a>
+        <a href="contact.asp" class="tab">Contact</a>
+        <a href="about.asp" class="tab">About</a>
+    	</div>
+        <div class="rest">
+    <div id="chess-board"></div>
+    <div id="comments-section">
+       <div id="upper"> <h2>Comments</h2>
+        <form id="sortby" style="margin-left: 200px;margin-top: 24px;">
+             <input type="radio" id="recent" name="sortcomments" value="recent">
+             <label for="recent">Recent</label>
+             <input type="radio" id="popular" name="sortcomments" value="popular">
+             <label for="css">Popular</label>
+             <input type="radio" id="puzzlec" name="sortcomments" value="puzzlec">
+             <label for="javascript">Puzzle-creator</label>
+             <input type="submit" value="Sort" >
+            </form> 
+        </div>
+        <div id="comments">
+            <% items.forEach(function(comment) { %>
+                <div class="comment">
+                    <p><strong><%= comment.userId %></strong>: <%= comment.message %> <em>(<%= comment.created_at %>)</em>
+                    <form class="upvoteForm" id="upvoteForm-<%= comment.id %>">
+                        <button type="submit">upvote</button><span id="upvote-<%= comment.id %>"><%= comment.upvotes %></span>
+                    </form></p>
+                </div>
+            <% }); %>
+        </div>
+        <form id="comment-form">
+            <textarea id="comment-input" rows="4" placeholder="Add a comment" required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+    </div></div>
+    <div class="tab">
+        <a href="/views/puzzle.ejs" class="tab">Back to puzzles</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const puzzleId = "<%= puzzle_id %>";
+            console.log(puzzleId);
+            // Initialize the chessboard
+            const board = Chessboard('chess-board', {
+                draggable: true,
+                position: "<%= puzzle_fen %>"
+            });
+
+            // Post a new comment
+            document.getElementById('comment-form').addEventListener('submit', event => {
+                event.preventDefault();
+                const commentInput = document.getElementById('comment-input');
+                const comment = commentInput.value;
+
+                console.log('Posting comment:', comment);
+
+                fetch(`/comments/${puzzleId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: comment })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Response data:', data.success);
+                    if (data.success) {
+                        commentInput.value = ''; // Clear the input
+                        // Append the new comment to the comments section
+                        const commentsDiv = document.getElementById('comments');
+                        const newCommentDiv = document.createElement('div');
+                        newCommentDiv.className = 'comment';
+                        newCommentDiv.innerHTML = `<p><strong>${data.username}</strong>: ${comment} <em>(${data.created_at})</em></p>`;
+                        commentsDiv.appendChild(newCommentDiv);
+                    } else {
+                        alert('Failed to post comment');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error posting comment:', error);
+                    alert('Error posting comment');
+                });
+            });
+
+            // Add event listener to each upvote form
+            document.querySelectorAll('.upvoteForm').forEach(form => {
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const commentId = form.id.split('-')[1];
+                    const upvoteCount = document.getElementById(`upvote-${commentId}`);
+                    
+                    fetch(`/upvotecomment/${commentId}`, {
+                        method: 'POST'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            upvoteCount.textContent = data.upvotes;
+                            form.querySelector('button').disabled = true;
+                            alert(data.message);
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error upvoting comment:', error);
+                        alert('Error upvoting comment');
+                    });
+                });
+            });
+
+            // Sort comments
+            document.getElementById('sortby').addEventListener('submit', event => {
+                event.preventDefault();
+                const sortbyForm = document.getElementById('sortby');
+                const formdata = new FormData(sortbyForm);
+                const selectedValue = formdata.get('sortcomments');
+                const puzzleId = "<%= puzzle_id %>";
+                console.log(`/discussion/${selectedValue}/${puzzleId}`);
+                window.location.href = `/discussion/${selectedValue}/${puzzleId}`;
+            });
+        });
+    </script>
+</body>
+</html>

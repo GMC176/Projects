@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Chess Puzzle</title>
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chess.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #69707a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            color: #444;
+        }
+        .puzzle-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .puzzle {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .board {
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .solutionForm, .upvoteForm {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .solutionForm label, .upvoteForm button {
+            margin-bottom: 5px;
+        }
+        .solutionForm input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .solutionForm button, .upvoteForm button {
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .solutionForm button:hover, .upvoteForm button:hover {
+            background-color: #218838;
+        }
+        .upvoteForm span {
+            margin-left: 10px;
+        }
+        a {
+            margin: 20px 0;
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <div id="puzzleList" class="puzzle-list">
+        <% items.forEach(item => { %>
+            <div class="puzzle" data-solution="<%= item.solution %>">
+                <div id="board-<%= item.id %>" class="board" data-position="<%= item.fen %>"></div>
+
+                <div class="message" id="message-<%= item.id %>"></div>
+                
+                <div style="margin-top: 10px;">Moves: <%= item.nummoves %> | Move By: <%= item.whitetoplay %></div>
+                <form class="solutionForm" id="solutionForm-<%= item.id %>">
+                    <label for="solution-<%= item.id %>">Your Solution:</label>
+                    <input type="text" id="solution-<%= item.id %>" required>
+                    <button type="submit">Submit Solution</button>
+                </form>
+                <form class="upvoteForm" id="upvoteForm-<%= item.id %>">
+                    <button type="submit">upvote</button><span id="upvoteCount-<%= item.id %>"><%= item.upvotes %></span>
+                </form>
+                <form class="discuss" id="discuss-<%= item.id %>">
+                    <button type="submit">Discuss</button>
+                </form>
+            </div>
+        <% }); %>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const puzzleList = document.getElementById('puzzleList');
+
+            puzzleList.querySelectorAll('.puzzle').forEach(puzzleDiv => {
+                const boardId = puzzleDiv.querySelector('.board').id;
+                const fen = puzzleDiv.querySelector('.board').getAttribute('data-position');
+                const solutionForm = puzzleDiv.querySelector('.solutionForm');
+                const solutionInput = puzzleDiv.querySelector('input[type="text"]');
+                const messageDiv = puzzleDiv.querySelector('.message');
+                const upvoteForm = puzzleDiv.querySelector('.upvoteForm');
+                const discussForm = puzzleDiv.querySelector('.discuss');
+                const upvoteCount = puzzleDiv.querySelector(`#upvoteCount-${boardId.split('-')[1]}`);
+
+                // Initialize the chessboard
+                const board = Chessboard(boardId, {
+                    position: fen,
+                    draggable: false
+                });
+
+                // Event listener for solution form submission
+                solutionForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const userSolution = solutionInput.value.trim();
+                    const correctSolution = puzzleDiv.getAttribute('data-solution');
+
+                    if (userSolution === correctSolution) {
+                        messageDiv.textContent = 'Correct!';
+                        messageDiv.style.color = 'green';
+                        const puzzleId = boardId.split('-')[1];
+                        fetch(`/scoreup/${puzzleId}`,{
+                            method:'POST'
+                        })
+                        .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            
+                            alert(data.message);
+                        } else {
+                            alert(data.message);
+                        }
+                    });
+                    } else {
+                        messageDiv.textContent = 'Incorrect, try again.';
+                        messageDiv.style.color = 'red';
+                    }
+                });
+
+                // Event listener for upvote form submission
+                upvoteForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const puzzleId = boardId.split('-')[1];
+
+                    fetch(`/upvote/${puzzleId}`, {
+                        method: 'POST'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            upvoteCount.textContent = data.upvotes;
+                            upvoteForm.querySelector('button').disabled = true;
+                            alert(data.message);
+                        } else {
+                            alert(data.message);
+                        }
+                    });
+                });
+                discussForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const puzzleId = boardId.split('-')[1];
+                    window.location.href = `/discussion/${puzzleId}`;
+                });
+            });
+        });
+    </script>
+    <a href="createpuzzle.html">Create Puzzle</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body{
+            background-image: url("/css/welcome.jpg");
+            background-size: 1920px 960px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            document.getElementById('welcomeMessage').textContent = `Welcome, ${username}!`;
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="welcome-container">
+        <h1 id="welcomeMessage">vcvhjnvhj</h1>
+    </div>
+    <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+      </ul> 
+</body>
+</html>
+
