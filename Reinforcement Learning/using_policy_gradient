@@ -1,0 +1,1 @@
+python3 RL.py --env_name LunarLander-v3 --num_iterations 1000 --reward_to_go --baseline --normalize_advantages --discount_factor 0.95 --learning_rate 0.001 --batch_size 4
